@@ -22,13 +22,13 @@ This project focuses on the development of an extractive summarization system de
 
 **Evaluation**: ROUGE Metric
 
-#### 📂 Project Structure
+### 📂 Project Structure
 
-* data/               # Medical datasets (ignored in Git for privacy)
-* notebooks/          # Google Colab notebooks
-* models/             # Saved model checkpoints and weights
-* src/                # Python scripts for cleaning and processing
-* README.md           # Project documentation
+* data/: Medical datasets (ignored in Git for privacy)
+* notebooks/: Google Colab notebooks
+* models/: Saved model checkpoints and weights
+* src/: Python scripts for cleaning and processing
+* README.md: Project documentation
 
 
 ### 📈 Methodology
