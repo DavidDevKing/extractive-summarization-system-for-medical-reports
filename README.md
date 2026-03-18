@@ -39,3 +39,10 @@ Sentence Ranking: Using a BERT encoder to represent sentences as numerical vecto
 Selection: Applying a ranking algorithm (like TextRank or a Linear Classifier) to select the top-N sentences.
 
 Evaluation: Comparing extracted summaries against human-annotated "gold" summaries using ROUGE-1 and ROUGE-L.
+
+
+### 🧾 Results
+| Model                           | ROUGE-1 <br> (f1) | ROUGE-2 <br> (f1) | ROUGE-L <br> (f1) | 
+| ------------------------------- | :---------------: | :---------------: | :---------------: |
+| Baseline (SciBERT + K-Means)    | 0.1921            | 0.0133            | 0.1060            |
+| Fine-tuned BERTsum model        | TBD               | TBD               | TBD               |
