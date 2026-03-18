@@ -1,9 +1,3 @@
-
-# Download the English language model for sentence splitting
-!python -m spacy download en_core_web_sm
-# Install the rouge scoring system
-!pip install rouge_score
-
 from transformers import AutoTokenizer, AutoModel
 import torch
 from sklearn.cluster import KMeans
