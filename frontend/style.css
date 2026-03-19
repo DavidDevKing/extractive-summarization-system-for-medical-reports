@@ -6,7 +6,8 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(211, 211, 211);
+  background-color: rgb(248, 248, 248);
+  margin-bottom: 2rem;
 }
 
 .card-header {
@@ -27,35 +28,64 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .card-design {
   background-color: white;
   width: 45%;
-  height: 28rem;
-  padding: 1rem;
+  height: 34rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card-design:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 textarea {
+  font-family: "Times New Roman", Times, serif;
+  background-color: rgb(17, 83, 204, 0.1);
+  font-size: 1.2rem;
+  line-height: 1.8rem;
   resize: none;
   width: 100%;
   height: 70%;
-  margin: 0.5rem 0rem;
-  padding: 0.3rem;
+  margin: 1rem 0rem;
+  padding: 0.8rem;
+  outline: none;
+  border-radius: 1rem;
   border: 0.1rem solid rgb(211, 211, 211);
+  transition: border 0.3s ease;
 }
 
 textarea:placeholder-shown {
   font-style: italic;
 }
 
+textarea:focus {
+  border: 0.2rem solid rgb(17, 83, 204);
+}
+
 #numSentences {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
 }
 
 input#numSentences {
-  width: 8rem;
+  width: 3rem;
+  outline: none;
+  border-radius: 0.5rem;
+  border: 0;
+  transition: border 0.3s ease;
+}
+
+input#numSentences:focus {
+  border-color: rgb(17, 83, 204);
 }
 
 .btn {
@@ -67,9 +97,25 @@ input#numSentences {
 
 .input-card button {
   background-color: rgb(17, 83, 204);
+  font-size: 1.2rem;
   color: white;
   border: 0;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.input-card button:hover {
+  background-color: rgb(0, 89, 255);
+  cursor: pointer;
+  transition: scale(1.05);
+}
+
+.input-card button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .output-card button {
@@ -80,6 +126,19 @@ input#numSentences {
 
 .fa-copy {
   font-size: 1.2rem;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.fa-copy:hover {
+  cursor: pointer;
+  transition: scale(1.05);
+}
+
+.output-card button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 @media (max-width: 768px) {

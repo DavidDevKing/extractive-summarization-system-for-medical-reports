@@ -19,20 +19,19 @@
 
     <section class="summarization-card">
       <section class="input-card card-design">
-        <h3>Enter your text to summarize:</h3>
+        <h3>Enter Your Medical Report To Summarize:</h3>
         <textarea
           name=""
           id="summaryInput"
           placeholder="Paste your article, essay, or document here..."
         ></textarea>
-        <label for="numSentences">Number of Sentences:</label>
-        <input
-          type="number"
-          id="numSentences"
-          min="1"
-          placeholder="Type any number"
-        />
-        <p>Word Count: <span id="wordCount">0</span></p>
+        <label for="numSentences">Sentences:</label>
+        <input type="number" id="numSentences" min="1" value="3" />
+        <p>Sentence Count: <span id="sentenceCount">0</span></p>
+        <!-- <div
+          id="sentenceCount"
+          style="margin-top: 6px; color: #666; font-size: 0.95em"
+        ></div> -->
         <section class="btn">
           <button id="generateBtn">Generate Summary</button>
           <button id="clearBtn">Clear</button>
