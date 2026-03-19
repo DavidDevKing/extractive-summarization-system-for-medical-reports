@@ -1,6 +1,5 @@
 const summaryInput = document.getElementById("summaryInput");
 const wordCount = document.getElementById("wordCount");
-// const inputText = document.getElementById("summaryInput");
 const numSentences = document.getElementById("numSentences");
 const clearBtn = document.getElementById("clearBtn");
 const generateBtn = document.getElementById("generateBtn");
@@ -20,28 +19,6 @@ summaryInput.addEventListener("input", () => {
   const words = text.split(/\s+/);
   wordCount.textContent = words.length;
 });
-
-// const inputText = document.getElementById("summaryInput");
-// const generateBtn = document.getElementById("generateBtn");
-// const summaryOutput = document.getElementById("summaryOutput");
-// const copyBtn = document.getElementById("copyBtn");
-
-// generateBtn.addEventListener("click", async () => {
-//   const text = inputText.value;
-
-//   if (text.trim() === "") {
-//     alert("Please enter some text to summarize.");
-//     return;
-//   }
-
-//   summaryOutput.value = "Generating summary...";
-
-// //   summaryOutput.value = "This is a sample AI generated summary";
-
-//     try{
-//       const response = await fetch(`https://api-inference.huggingface.co/models/${HF}`)
-//     }
-// });
 
 //To input number of sentences
 
@@ -63,12 +40,11 @@ generateBtn.addEventListener("click", async () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // "Authorization": "Bearer hf_xxxxxxxxxxxxxxxxxxxxxxxxxx"   ← only if rate-limited
         },
         body: JSON.stringify({
           inputs: text,
           parameters: {
-            max_length: 130, // tweak these
+            max_length: 130,
             min_length: 30,
             do_sample: false,
           },
@@ -82,7 +58,6 @@ generateBtn.addEventListener("click", async () => {
 
     const data = await response.json();
 
-    // Most HF summarization models return an array with one object
     summaryOutput.value = data[0]?.summary_text || "No summary returned";
   } catch (error) {
     summaryOutput.value = "Error generating summary.\n" + error.message;
