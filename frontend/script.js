@@ -55,8 +55,8 @@ generateBtn.addEventListener("click", async () => {
     return;
   }
 
-  if (isNaN(targetSentences) || targetSentences < 1 || targetSentences > 30) {
-    alert("Please enter a number of sentences between 1 and 30.");
+  if (isNaN(targetSentences) || targetSentences < 1) {
+    alert("Please enter a number of sentences of at least 1.");
     return;
   }
 

@@ -108,9 +108,14 @@ input#numSentences:focus {
   background-color: rgb(17, 83, 204, 0.1);
   border: 0.1rem solid rgb(211, 211, 211);
   border-radius: 0.5rem;
-  padding: 0rem 1rem 0rem 0.3rem;
+  padding: 0rem 0.3rem;
   display: flex;
   align-items: center;
+}
+
+#summaryMeta {
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .btn {
@@ -182,12 +187,12 @@ input#numSentences:focus {
 
   .card-design {
     width: 90%;
-    height: 28rem;
+    height: 36rem;
     padding: 1.5rem 1rem 1rem 1rem;
   }
 
   textarea {
-    height: 60%;
+    height: 68%;
     font-size: 1.1rem;
     line-height: 1.6rem;
     margin: 0.8rem 0rem;
@@ -222,5 +227,9 @@ input#numSentences:focus {
   .input-card button {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .output-card {
+    height: 36rem;
   }
 }
