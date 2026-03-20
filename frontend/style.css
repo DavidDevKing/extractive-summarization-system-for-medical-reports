@@ -34,7 +34,7 @@ body {
 .card-design {
   background-color: white;
   width: 45%;
-  height: 34rem;
+  height: 35rem;
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -72,12 +72,28 @@ textarea:focus {
   border: 0.2rem solid rgb(17, 83, 204);
 }
 
-#numSentences {
-  margin-bottom: 0.8rem;
+.text-card {
+  padding: 0rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputSentence {
+  background-color: rgb(17, 83, 204, 0.1);
+  border: 0.1rem solid rgb(211, 211, 211);
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
 }
 
 input#numSentences {
-  width: 3rem;
+  background-color: rgb(17, 83, 204, 0.1);
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding-left: 0.2rem;
+  margin-left: 0.7rem;
   outline: none;
   border-radius: 0.5rem;
   border: 0;
@@ -85,11 +101,20 @@ input#numSentences {
 }
 
 input#numSentences:focus {
-  border-color: rgb(17, 83, 204);
+  border: 0.1rem solid rgb(17, 83, 204);
+}
+
+.text-card p {
+  background-color: rgb(17, 83, 204, 0.1);
+  border: 0.1rem solid rgb(211, 211, 211);
+  border-radius: 0.5rem;
+  padding: 0rem 1rem 0rem 0.3rem;
+  display: flex;
+  align-items: center;
 }
 
 .btn {
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -157,14 +182,37 @@ input#numSentences:focus {
 
   .card-design {
     width: 90%;
-    height: 30rem;
+    height: 28rem;
+    padding: 1.5rem 1rem 1rem 1rem;
   }
 
   textarea {
     height: 60%;
-    margin: 0.5rem 0rem;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    margin: 0.8rem 0rem;
     padding: 0.3rem;
     border: 0.1rem solid rgb(211, 211, 211);
+  }
+
+  .text-card {
+    padding: 0rem;
+    font-size: 0.8rem;
+  }
+
+  .inputSentence {
+    padding: 0.2rem;
+  }
+
+  input#numSentences {
+    width: 2.5rem;
+    height: 1.5rem;
+    padding-left: 0.2rem;
+    margin-left: 0.2rem;
+  }
+
+  .btn {
+    margin-top: 1rem;
   }
 
   .output-card textarea {
@@ -173,5 +221,6 @@ input#numSentences:focus {
 
   .input-card button {
     padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 }

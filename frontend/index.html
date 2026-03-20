@@ -13,7 +13,7 @@
 
   <body>
     <section class="card-header">
-      <h1>AI TEXT SUMMARIZATION SYSTEM</h1>
+      <h1>EXTRACTIVE SUMMARIZATION SYSTEM</h1>
       <p>Powered By BERT</p>
     </section>
 
@@ -25,15 +25,15 @@
           id="summaryInput"
           placeholder="Paste your article, essay, or document here..."
         ></textarea>
-        <label for="numSentences">Sentences:</label>
-        <input type="number" id="numSentences" min="1" value="3" />
-        <p>Sentence Count: <span id="sentenceCount">0</span></p>
-        <!-- <div
-          id="sentenceCount"
-          style="margin-top: 6px; color: #666; font-size: 0.95em"
-        ></div> -->
+        <section class="text-card">
+          <section class="inputSentence">
+            <label for="numSentences">Sentences:</label>
+            <input type="number" id="numSentences" min="1" value="3" />
+          </section>
+          <p>Sentence Count: <span id="sentenceCount"></span></p>
+        </section>
         <section class="btn">
-          <button id="generateBtn">Generate Summary</button>
+          <button id="generateBtn" disabled>Generate Summary</button>
           <button id="clearBtn">Clear</button>
         </section>
       </section>
@@ -44,9 +44,13 @@
           name=""
           id="summaryOutput"
           placeholder="The summarized text will appear here..."
+          readonly
         ></textarea>
+        <p id="summaryMeta"></p>
         <p></p>
-        <button id="copyBtn"><i class="fa-regular fa-copy"></i></button>
+        <button id="copyBtn" disabled>
+          <i class="fa-regular fa-copy"></i>
+        </button>
       </section>
     </section>
     <script src="script.js"></script>

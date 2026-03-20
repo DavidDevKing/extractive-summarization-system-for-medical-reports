@@ -1,16 +1,14 @@
 const summaryInput = document.getElementById("summaryInput");
-// const wordCount = document.getElementById("wordCount");
 const sentenceCount = document.getElementById("sentenceCount");
 const numSentences = document.getElementById("numSentences");
 const clearBtn = document.getElementById("clearBtn");
 const generateBtn = document.getElementById("generateBtn");
 const numSentencesInput = document.getElementById("numSentences");
 const summaryOutput = document.getElementById("summaryOutput");
-
+const summaryMeta = document.getElementById("summaryMeta");
 const copyBtn = document.getElementById("copyBtn");
-const HF_MODEL = "facebook/bart-large-cnn";
 
-// Simple sentence counter (handles most medical/abbreviation cases reasonably well)
+// Simple sentence counter
 function countSentences(text) {
   if (!text.trim()) return 0;
 
@@ -30,11 +28,8 @@ function countSentences(text) {
 }
 
 //To generate the summary
-
 const ENDPOINT =
   "https://moseleydev-medical-report-extractive-summarizer.hf.space/api/summarize";
-
-// Get DOM elements
 
 // Safety check
 if (!generateBtn || !summaryInput || !numSentencesInput || !summaryOutput) {
@@ -109,14 +104,15 @@ generateBtn.addEventListener("click", async () => {
       ? `~${Math.round(meta.processing_time_ms / 100) / 10}s`
       : "";
 
-    const metadataLine = procTime
+    summaryMeta.textContent = procTime
       ? `\n\n(Engine: ${engine} • Processing: ${procTime})`
       : `\n\n(Engine: ${engine})`;
 
     // Put result in textarea
-    summaryOutput.value = summaryText + metadataLine;
+    summaryOutput.value = summaryText;
     summaryOutput.style.color = "#000";
     summaryOutput.style.fontStyle = "normal";
+    copyBtn.disabled = false;
   } catch (err) {
     console.error("Summary failed:", err);
 
@@ -161,6 +157,9 @@ clearBtn.addEventListener("click", () => {
   summaryOutput.value = "";
   numSentences.value = "3";
   sentenceCount.textContent = "";
+  summaryMeta.textContent = "";
+  copyBtn.disabled = true;
+  generateBtn.disabled = true;
 });
 
 //To copy the summary
@@ -169,7 +168,7 @@ copyBtn.addEventListener("click", () => {
 
   navigator.clipboard.writeText(summaryText);
 
-  copyBtn.textContent = "Copied";
+  copyBtn.textContent = "Copied!";
 
   setTimeout(() => {
     copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
