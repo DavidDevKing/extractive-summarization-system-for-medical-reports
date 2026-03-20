@@ -42,7 +42,8 @@ Evaluation: Comparing extracted summaries against human-annotated "gold" summari
 
 
 ### 🧾 Results
-| Model                           | ROUGE-1 <br> (f1) | ROUGE-2 <br> (f1) | ROUGE-L <br> (f1) | Notes                                      | 
-| ------------------------------- | :---------------: | :---------------: | :---------------: | ------------------------------------------ |
-| Baseline (SciBERT + K-Means)    | 0.2720            | 0.2720            | 0.1518            | Unsupervised; captures medical terms well. |
-| Fine-tuned BERTsum model        | TBD               | TBD               | TBD               | Training pending                           |
+| Model                           | ROUGE-1 <br> (f1) | ROUGE-2 <br> (f1) | ROUGE-L <br> (f1) | Notes                                                                                 | 
+| ------------------------------- | :---------------: | :---------------: | :---------------: | ------------------------------------------------------------------------------------- |
+| Baseline (SciBERT + K-Means)    | 0.2631            | 0.0662            | 0.1417            | Unsupervised; captures medical terms well.                                            |
+| Fine-tuned BERTsum model        | 0.3782            | 0.0586            | 0.1600            | Trained Model; gives streamlined summaries                                            |
+| Improvement (%)                 | +43.75            | -11.48            | +12.91            | Noticable improvement in ROUGE-1 and ROUGE-L scores; Negligable loss in ROUGE-2 score |
